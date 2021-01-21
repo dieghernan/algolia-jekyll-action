@@ -1,0 +1,22 @@
+name: Algolia Jekyll Action
+description: Run jekyll-algolia plugin
+branding:
+  icon: 'search'
+  color: 'purple'
+inputs:
+  APIKEY:
+    description: 'Algolia API Key'
+    required: true
+runs:
+  using: composite
+  steps:
+    - name: Bundle install
+      run: |
+        bundle config path vendor/bundle
+        bundle install --jobs 4 --retry 3
+      shell: bash
+    - name: Exec jekyll algolia
+      run: bundle exec jekyll algolia
+      env:
+        ALGOLIA_API_KEY: '${{ inputs.APIKEY }}'
+      shell: bash
