@@ -1,5 +1,6 @@
 # algolia-jekyll-action
 
+![latest-version](https://img.shields.io/github/v/release/dieghernan/algolia-jekyll-action)
 ![gh-pages](https://img.shields.io/badge/gh—pages-ready-green)
 ![jekyll](https://img.shields.io/badge/jekyll-%3E%3D%203.6.0-blue)
 ![ruby](https://img.shields.io/badge/ruby-%3E%3D%202.3.0-blue)
