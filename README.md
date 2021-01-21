@@ -82,7 +82,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gems-
             
-      - uses: dieghernan/algolia-jekyll-action@v1
+      - name: Algolia Jekyll Action
+        uses: dieghernan/algolia-jekyll-action@v1
         with:
           APIKEY: '${{ secrets.ALGOLIA_API_KEY }}'
 
