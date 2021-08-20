@@ -72,11 +72,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
-      - uses: actions/setup-ruby@v1
+      - uses: ruby/setup-ruby@v1
         with:
           ruby-version: '2.6'
+          bundler-cache: true
           
-      - uses: actions/cache@v2
+      - uses: actions/cache@v2.1.6
         with:
           path: vendor/bundle
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
@@ -87,7 +88,6 @@ jobs:
         uses: dieghernan/algolia-jekyll-action@v1
         with:
           APIKEY: '${{ secrets.ALGOLIA_API_KEY }}'
-
 
 ```
 
