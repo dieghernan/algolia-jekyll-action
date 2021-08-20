@@ -23,12 +23,12 @@ You need to add `jekyll-algolia` to your `Gemfile`, as part of the `:jekyll-plug
 Minimal `Gemfile` example:
 
 ```ruby
-source ‘https://rubygems.org’
+source 'https://rubygems.org'
 
-gem ‘jekyll’, ‘~> 3.6’
+gem 'jekyll', '~> 3.6'
 
 group :jekyll_plugins do
-  gem ‘jekyll-algolia’
+  gem 'jekyll-algolia'
 end
 ```
 
