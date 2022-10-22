@@ -14,7 +14,11 @@ url: "https://github.com/marketplace/actions/algolia-jekyll-action"
 repository-code: "https://github.com/dieghernan/algolia-jekyll-action"
 keywords:
   - algolia
+  - algolia-instantsearch
+  - algolia-search
+  - github-actions
+  - github-pages
+  - github-pages-website
   - jekyll
-  - gh-pages
-  - GitHub
+  - ruby
   - search
