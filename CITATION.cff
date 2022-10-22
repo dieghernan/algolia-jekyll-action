@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this software in your research, please cite it as below."
+title: "algolia-jekyll-action"
+version: "v2"
+date-released: "2022-10-22"
+abstract: "Runs jekyll-algolia plugin for GitHub Pages."
+authors:
+- family-names: "Hernangómez"
+  given-names: "Diego"
+  orcid: "https://orcid.org/0000-0001-8457-4658"
+license: MIT
+url: "https://github.com/marketplace/actions/algolia-jekyll-action"
+repository-code: "https://github.com/dieghernan/algolia-jekyll-action"
+keywords:
+  - algolia
+  - jekyll
+  - gh-pages
+  - GitHub
+  - search

@@ -70,28 +70,21 @@ jobs:
   algolia-search:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      
-      - uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '2.6'
-          bundler-cache: true
-          
-      - uses: actions/cache@v2.1.6
-        with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-gems-
-            
+      - uses: actions/checkout@v3
       - name: Algolia Jekyll Action
-        uses: dieghernan/algolia-jekyll-action@v1
+        uses: dieghernan/algolia-jekyll-action@main
         with:
           APIKEY: '${{ secrets.ALGOLIA_API_KEY }}'
 
 ```
 
 This action would run on every commit on the `main/master`. For more trigger events see [this link](https://docs.github.com/en/actions/reference/events-that-trigger-workflows#configuring-workflow-events).
+
+## Inputs available
+-   `APIKEY`: Required. It is better to use GitHub Secrets (see above) instead the actual value on the action, for security reasons.
+-   `ruby-version`: Version of Ruby to use on build. Default is `'2.6'`.
+-   `cache-version`: default `1`. If you need to invalidate the existing cache pass any other number and a new cache will be used.
+
 
 ## Disclaimer
 
