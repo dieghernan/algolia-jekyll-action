@@ -30,7 +30,7 @@ runs:
       with:
         path: vendor/bundle
         key: ${{ runner.os }}-gems-${{ inputs.ruby-version }}-${{ inputs.cache-version }}
-          restore-keys: |
+        restore-keys: |
             ${{ runner.os }}-gems-${{ inputs.ruby-version }}-${{ inputs.cache-version }}
     - name: Bundle install
       run: |
