@@ -35,9 +35,9 @@ runs:
       run: |
         # Cache
         find ${{ github.workspace }} -mindepth 1 ! -regex '^${{ github.workspace }}/${{ inputs.jekyll_src }}\(/.*\)?' -delete
-        rm -r '${{ github.workspace }}/${{ inputs.jekyll_src }}'
         echo "New Content"
         cp -a '${{ github.workspace }}/${{ inputs.jekyll_src }}/.' '${{ github.workspace }}/'
+        rm -r '${{ github.workspace }}/${{ inputs.jekyll_src }}'
         echo "$(ls)"
         # Bundle install
         echo "::group::Bundle install"
