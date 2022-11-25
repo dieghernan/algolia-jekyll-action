@@ -30,15 +30,13 @@ runs:
         ruby-version: ${{ inputs.ruby-version }}
         bundler-cache: true
         cache-version: ${{ runner.os }}-gems-${{ inputs.ruby-version }}-${{ inputs.cache-version }}-${{ inputs.jekyll_src }}
-        working-directory: ${{ inputs.jekyll_src }}
         
     - name: Exec jekyll algolia
       run: |
         # Cache
-        echo "$(ls)"
         find ${{ github.workspace }} -mindepth 1 ! -regex '^${{ github.workspace }}/${{ inputs.jekyll_src }}\(/.*\)?' -delete
-        
-        echo "new"
+        rmdir '${{ github.workspace }}/${{ inputs.jekyll_src }}'
+        echo "New Content"
         cp -a '${{ github.workspace }}/${{ inputs.jekyll_src }}/.' '${{ github.workspace }}/'
         echo "$(ls)"
         # Bundle install
