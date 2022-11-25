@@ -38,6 +38,7 @@ runs:
         cd ${{ github.workspace }}/${{ inputs.jekyll_src }}
         echo "::group::Current directory"
         echo "$PWD"
+        echo "$(ls)"
         echo "::endgroup::"
         echo "::group::Install jekyll-algolia"
         
