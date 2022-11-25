@@ -41,11 +41,12 @@ runs:
         echo "$(ls)"
         echo "::endgroup::"
         echo "::group::Install jekyll-algolia"
-        
-        echo "::endgroup::"
-        echo "::group::Updating Algolia Index"
         bundle config path "$PWD/vendor/bundle"
         bundle install
+        gem install "jekyll-algolia"
+        echo "::endgroup::"
+        echo "::group::Updating Algolia Index"
+
         
         bundle exec jekyll algolia -s ${{ github.workspace }}/${{ inputs.jekyll_src }}
         echo "::endgroup::"
