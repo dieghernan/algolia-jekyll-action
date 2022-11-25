@@ -43,11 +43,9 @@ runs:
         echo "::group::Install jekyll-algolia"
         bundle config path "$PWD/vendor/bundle"
         echo "$PWD/vendor/bundle"
-        bundle install
-        gem install "jekyll-algolia"
         echo "::endgroup::"
         echo "::group::Updating Algolia Index"
-        
+        bundle exec jekyll algolia
         echo "::endgroup::"
       env:
         ALGOLIA_API_KEY: '${{ inputs.APIKEY }}'
