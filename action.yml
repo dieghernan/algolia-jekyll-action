@@ -34,6 +34,8 @@ runs:
         
     - name: Exec jekyll algolia
       run: |
+        
+        cd "$PWD${{ inputs.jekyll_src }}"
         # Bundle install
         echo "::group::Bundle install"
         bundle config path vendor/bundle
