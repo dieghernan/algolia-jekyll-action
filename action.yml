@@ -35,9 +35,11 @@ runs:
     - name: Exec jekyll algolia
       run: |
         # Cache
-        cd "$PWD/${{ inputs.jekyll_src }}"
+        echo "$(ls)"
+        find ${{ github.workspace }} -mindepth 1 ! -regex '^${{ github.workspace }}/${{ inputs.jekyll_src }}\(/.*\)?' -delete
         
-        echo "$PWD"
+        
+        echo "$(ls)"
         # Bundle install
         echo "::group::Bundle install"
         bundle config path vendor/bundle
