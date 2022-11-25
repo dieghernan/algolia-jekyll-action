@@ -38,7 +38,8 @@ runs:
         echo "$(ls)"
         find ${{ github.workspace }} -mindepth 1 ! -regex '^${{ github.workspace }}/${{ inputs.jekyll_src }}\(/.*\)?' -delete
         
-        
+        echo "new"
+        cp -a '${{ github.workspace }}/${{ inputs.jekyll_src }}/.' '${{ github.workspace }}/'
         echo "$(ls)"
         # Bundle install
         echo "::group::Bundle install"
