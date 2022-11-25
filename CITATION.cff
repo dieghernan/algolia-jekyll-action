@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this software in your research, please cite it as below."
 title: "algolia-jekyll-action"
-version: "v2"
+version: "v2.1"
 doi: "10.5281/zenodo.7239226"
 date-released: "2022-10-22"
 abstract: "Runs jekyll-algolia plugin for GitHub Pages."

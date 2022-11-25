@@ -38,8 +38,8 @@ runs:
         # Run Jekyll Algolia
         cd  '${{ github.workspace }}/${{ inputs.jekyll_src }}'
         # Bundle install
-        echo "::group::Jekyll source"
-        echo "Site source: $PWD"
+        echo "::group::Jekyll folder"
+        echo "Building Jekyll from: $PWD"
         echo "::endgroup::"
         # Updating Algolia Index
         echo "::group::Updating Algolia Index"
