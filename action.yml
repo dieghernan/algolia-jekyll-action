@@ -16,6 +16,11 @@ inputs:
     description: 'The version of the cache, change this from the default (1) to start over with a fresh cache.'
     required: false
     default: 1
+  jekyll_src:  
+    description: 'The Jekyll website source directory'
+    required: false
+    default: ''
+ 
     
 runs:
   using: composite
@@ -24,25 +29,13 @@ runs:
       with:
         ruby-version: ${{ inputs.ruby-version }}
         bundler-cache: true
-        cache-version: ${{ inputs.cache-version }}
-          
-    - uses: actions/cache@v3
-      with:
-        path: vendor/bundle
-        key: ${{ runner.os }}-gems-${{ inputs.ruby-version }}-${{ inputs.cache-version }}
-        restore-keys: |
-            ${{ runner.os }}-gems-${{ inputs.ruby-version }}-${{ inputs.cache-version }}
-    - name: Bundle install
-      run: |
-        # Bundle install
-        echo "::group::Bundle install"
-        bundle config path vendor/bundle
-        bundle install --jobs 4 --retry 3
-        echo "::endgroup::"
-      shell: bash
+        cache-version: ${{ runner.os }}-gems-${{ inputs.ruby-version }}-${{ inputs.cache-version }}-${{ inputs.jekyll_src }}
+        working-directory: ${{ inputs.jekyll_src }}
+        
     - name: Exec jekyll algolia
       run: |
         # Updating Algolia Index
+        echo "$PWD"
         echo "::group::Updating Algolia Index"
         bundle exec jekyll algolia
         echo "::endgroup::"
