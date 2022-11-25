@@ -45,5 +45,4 @@ runs:
         echo "::endgroup::"
       env:
         ALGOLIA_API_KEY: '${{ inputs.APIKEY }}'
-        BUNDLE_GEMFILE: '${{ github.workspace }}/${{ inputs.jekyll_src }}'
       shell: bash
