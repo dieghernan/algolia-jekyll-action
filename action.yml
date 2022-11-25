@@ -46,9 +46,7 @@ runs:
         gem install "jekyll-algolia"
         echo "::endgroup::"
         echo "::group::Updating Algolia Index"
-
-        
-        bundle exec jekyll algolia -s ${{ github.workspace }}/${{ inputs.jekyll_src }}
+        bundle exec jekyll algolia -s $PWD
         echo "::endgroup::"
       env:
         ALGOLIA_API_KEY: '${{ inputs.APIKEY }}'
