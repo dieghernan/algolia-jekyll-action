@@ -39,8 +39,8 @@ runs:
         echo "::group::Current directory"
         echo "$PWD"
         echo "::endgroup::"
-        echo "::group::Bundle install"
-        bundle install --jobs 4 --retry 3
+        echo "::group::Install jekyll-algolia"
+        gem install jekyll-algolia
         echo "::endgroup::"
         echo "::group::Updating Algolia Index"
         bundle exec jekyll algolia
