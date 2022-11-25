@@ -43,7 +43,6 @@ runs:
         echo "::group::Install jekyll-algolia"
         echo "$PWD/vendor/bundle"
         
-        bundle config path "$PWD/vendor/bundle"
         bundle update
         
         echo "::endgroup::"
