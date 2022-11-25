@@ -35,7 +35,7 @@ runs:
       run: |
         # Cache
         find ${{ github.workspace }} -mindepth 1 ! -regex '^${{ github.workspace }}/${{ inputs.jekyll_src }}\(/.*\)?' -delete
-        rmdir '${{ github.workspace }}/${{ inputs.jekyll_src }}'
+        rm -r '${{ github.workspace }}/${{ inputs.jekyll_src }}'
         echo "New Content"
         cp -a '${{ github.workspace }}/${{ inputs.jekyll_src }}/.' '${{ github.workspace }}/'
         echo "$(ls)"
