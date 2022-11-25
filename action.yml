@@ -9,9 +9,9 @@ inputs:
     description: 'Algolia API Key'
     required: true
   ruby-version:
-    description: 'Version of Ruby to use on build. Default is 2.6.'
+    description: 'Version of Ruby to use on build. Default is 2.7.'
     required: false
-    default: '2.6'
+    default: '2.7'
   cache-version:
     description: 'The version of the cache, change this from the default (1) to start over with a fresh cache.'
     required: false
