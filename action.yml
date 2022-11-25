@@ -38,7 +38,10 @@ runs:
         cd ${{ github.workspace }}/${{ inputs.jekyll_src }}
         echo "::group::Current directory"
         echo "$PWD"
-        echo "::endgroup::"        
+        echo "::endgroup::"
+        echo "::group::Bundle install"
+        bundle install --jobs 4 --retry 3
+        echo "::endgroup::"
         echo "::group::Updating Algolia Index"
         bundle exec jekyll algolia
         echo "::endgroup::"
