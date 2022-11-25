@@ -35,7 +35,10 @@ runs:
     - name: Exec jekyll algolia
       run: |
         # Updating Algolia Index
+        cd ${{ github.workspace }}/${{ inputs.jekyll_src }}
+        echo "::group::Current directory"
         echo "$PWD"
+        echo "::endgroup::"        
         echo "::group::Updating Algolia Index"
         bundle exec jekyll algolia
         echo "::endgroup::"
