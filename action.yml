@@ -34,7 +34,11 @@ runs:
         
     - name: Exec jekyll algolia
       run: |
-        bundle install
+        # Bundle install
+        echo "::group::Bundle install"
+        bundle config path vendor/bundle
+        bundle install --jobs 4 --retry 3
+        echo "::endgroup::"
         # Updating Algolia Index
         echo "::group::Updating Algolia Index"
         bundle exec jekyll algolia -s $PWD
