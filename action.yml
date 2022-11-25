@@ -30,6 +30,8 @@ runs:
         ruby-version: ${{ inputs.ruby-version }}
         bundler-cache: true
         cache-version: ${{ runner.os }}-gems-${{ inputs.ruby-version }}-${{ inputs.cache-version }}-${{ inputs.jekyll_src }}
+        working-directory: ${{ inputs.jekyll_src }}
+
         
     - name: Exec jekyll algolia
       run: |
