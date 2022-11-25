@@ -41,11 +41,14 @@ runs:
         echo "$(ls)"
         echo "::endgroup::"
         echo "::group::Install jekyll-algolia"
-        bundle config path "$PWD/vendor/bundle"
         echo "$PWD/vendor/bundle"
+        
+        bundle config path "$PWD/vendor/bundle"
+        bundle update
+        
         echo "::endgroup::"
         echo "::group::Updating Algolia Index"
-        bundle exec jekyll algolia
+        bundle exec jekyll algolia -s $PWD
         echo "::endgroup::"
       env:
         ALGOLIA_API_KEY: '${{ inputs.APIKEY }}'
