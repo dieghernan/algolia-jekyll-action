@@ -4,6 +4,7 @@
 ![gh-pages](https://img.shields.io/badge/gh—pages-ready-green)
 ![jekyll](https://img.shields.io/badge/jekyll-%3E%3D%203.6.0-blue)
 ![ruby](https://img.shields.io/badge/ruby-%3E%3D%202.3.0-blue)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdieghernan%2Falgolia-jekyll-action.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fdieghernan%2Falgolia-jekyll-action?ref=badge_shield)
 
 This is a wrapper of the [jekyll-algolia](https://community.algolia.com/jekyll-algolia/) plugin.
 
@@ -90,3 +91,7 @@ This software is in no way officially related to or endorsed by Algolia.
 
 
 
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdieghernan%2Falgolia-jekyll-action.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fdieghernan%2Falgolia-jekyll-action?ref=badge_large)
